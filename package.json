@@ -1,0 +1,26 @@
+{
+  "name": "dummy",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Ludwig Magnusson <ludwig.magnusson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "ramda": "^0.27.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "underscore": "^1.11.0",
+    "yafu": "^0.1.13"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.9.0"
+  },
+  "scripts": {
+    "transpile": "mkdir -p dist && babel lib -d dist --source-maps",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "yarn clean && yarn transpile"
+  }
+}

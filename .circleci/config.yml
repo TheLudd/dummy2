@@ -4,6 +4,7 @@ orbs:
 jobs:
   build:
     executor: node/default
+    parallelism: 4
     steps:
       - run: sleep 5  && echo 1
       - run: sleep 5  && echo 2

@@ -2,23 +2,19 @@ version: 2.1
 orbs:
   node: circleci/node@4.0.0
 jobs:
-  test:
-    executor:
-      name: node/default
+  build:
+    executor: node/default
     steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          name: Print info
-          command: |
-            cat /proc/cpuinfo
-      - run:
-          command: yarn test
-          name: Run YARN tests
+      - run: sleep 5  && echo 1
+      - run: sleep 5  && echo 2
+      - run: sleep 5  && echo 3
+      - run: sleep 5  && echo 4
+      - run: sleep 5  && echo 5
 workflows:
   matrix-tests:
     jobs:
+      - build:
+          context: Test
       - node/test:
           pkg-manager: yarn
           matrix:

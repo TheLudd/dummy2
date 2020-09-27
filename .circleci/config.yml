@@ -6,7 +6,9 @@ jobs:
     executor: node/default
     parallelism: 1
     steps:
-      - run: ./run-busy
+      - run: |
+          ls -la
+          ./run-busy
 workflows:
   matrix-tests:
     jobs:

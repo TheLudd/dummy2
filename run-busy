@@ -1,0 +1,7 @@
+#!/bin/bash
+runs="1 2 3 4"
+
+for r in $runs
+do
+	node busy.js $r
+done

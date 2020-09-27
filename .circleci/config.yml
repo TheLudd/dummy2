@@ -4,9 +4,9 @@ orbs:
 jobs:
   build:
     executor: node/default
-    parallelism: 2
+    parallelism: 1
     steps:
-      - run: printenv | grep CIRCLE
+      - run: ./run-busy
 workflows:
   matrix-tests:
     jobs:

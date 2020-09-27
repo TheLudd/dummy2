@@ -10,6 +10,9 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
+          command: 'cat /proc/cpuinfo'
+          name: Print info
+      - run:
           command: yarn test
           name: Run YARN tests
 workflows:

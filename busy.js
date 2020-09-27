@@ -1,7 +1,11 @@
 const start = Date.now()
 
-do {
+console.time(`Job ${process.argv[2]} done`)
+function fib (n) {
+  if (n < 2) return 1
 
-} while ((Date.now() - start) < 5000)
+  return fib(n - 1) + fib(n - 2)
+}
 
-console.log(`Job ${process.argv[2]} done`)
+console.log(fib(42))
+console.timeEnd(`Job ${process.argv[2]} done`)

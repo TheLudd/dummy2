@@ -4,13 +4,8 @@ orbs:
 jobs:
   build:
     executor: node/default
-    parallelism: 4
+    parallelism: 2
     steps:
-      - run: printenv | grep CIRCLE
-      - run: printenv | grep CIRCLE
-      - run: printenv | grep CIRCLE
-      - run: printenv | grep CIRCLE
-      - run: printenv | grep CIRCLE
       - run: printenv | grep CIRCLE
 workflows:
   matrix-tests:

@@ -2,19 +2,36 @@ version: 2.1
 orbs:
   node: circleci/node@4.0.0
 jobs:
-  build:
+  one:
     executor: node/default
     steps:
       - run: sleep 5  && echo 1
+  two:
+    executor: node/default
+    steps:
       - run: sleep 5  && echo 2
+  three:
+    executor: node/default
+    steps:
       - run: sleep 5  && echo 3
+  four:
+    executor: node/default
+    steps:
       - run: sleep 5  && echo 4
+  five:
+    executor: node/default
+    steps:
       - run: sleep 5  && echo 5
 workflows:
+  build:
+    jobs:
+      - one
+      - two
+      - three
+      - four
+      - five
   matrix-tests:
     jobs:
-      - build:
-          context: Test
       - node/test:
           pkg-manager: yarn
           matrix:

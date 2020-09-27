@@ -6,11 +6,12 @@ jobs:
     executor: node/default
     parallelism: 4
     steps:
-      - run: sleep 5  && echo 1
-      - run: sleep 5  && echo 2
-      - run: sleep 5  && echo 3
-      - run: sleep 5  && echo 4
-      - run: sleep 5  && echo 5
+      - run: printenv | grep CIRCLE
+      - run: printenv | grep CIRCLE
+      - run: printenv | grep CIRCLE
+      - run: printenv | grep CIRCLE
+      - run: printenv | grep CIRCLE
+      - run: printenv | grep CIRCLE
 workflows:
   matrix-tests:
     jobs:

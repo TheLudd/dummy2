@@ -3,7 +3,7 @@ runs="0 1 2 3"
 
 for r in $runs
 do
-	if [[ $CIRCLE_NODE_INDEX == "$r" ]]; then
+	# if [[ $CIRCLE_NODE_INDEX == "$r" ]]; then
 		node busy.js $r
-	fi
+	# fi
 done

@@ -6,10 +6,15 @@ jobs:
     executor: node/default
     steps:
       - run: sleep 5  && echo 1
+        parallel: true
       - run: sleep 5  && echo 2
+        parallel: true
       - run: sleep 5  && echo 3
+        parallel: true
       - run: sleep 5  && echo 4
+        parallel: true
       - run: sleep 5  && echo 5
+        parallel: true
 workflows:
   matrix-tests:
     jobs:

@@ -5,6 +5,7 @@
   "author": "Ludwig Magnusson <ludwig.magnusson@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cucumber": "^7.0.0-rc.0",
     "lodash": "^4.17.20",
     "ramda": "^0.27.1",
     "react": "^16.13.1",

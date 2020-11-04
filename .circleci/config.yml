@@ -1,25 +1,27 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.0.0
+  node: circleci/node@4.1.0
 jobs:
   build:
     executor: node/default
     # parallelism: 4
     steps:
       - checkout
-      - run: |
-          ls -la
-          ./run-busy
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn test
+          name: Run YARN tests
 workflows:
   matrix-tests:
     jobs:
       - build:
           context: Test
-      # - node/test:
-      #     pkg-manager: yarn
-      #     matrix:
-      #       parameters:
-      #         version:
-      #           - 14.4.0
-      #           - 12.18.1
-      #           - 10.21.0
+      - node/test:
+          pkg-manager: yarn
+          matrix:
+            parameters:
+              version:
+                - 14.4.0
+                - 12.18.1
+                - 10.21.0
